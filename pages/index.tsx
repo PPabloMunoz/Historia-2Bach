@@ -1,3 +1,5 @@
+import { bloques1_2, bloque2_3 } from '@/utils/dataCronologia'
+
 export default function Home() {
   return (
     <>
