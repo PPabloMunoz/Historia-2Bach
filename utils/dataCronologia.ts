@@ -1,6 +1,6 @@
 import { Cronologia } from '@/types'
 
-export const bloques1_2: Cronologia[] = [
+export const cronoBloques1_2: Cronologia[] = [
   {
     id: 1,
     name: 'Atapuerca'
@@ -79,7 +79,7 @@ export const bloques1_2: Cronologia[] = [
   }
 ]
 
-export const bloque2_3: Cronologia[] = [
+export const cronoBloque2_3: Cronologia[] = [
   {
     id: 1,
     name: 'Inquisición'

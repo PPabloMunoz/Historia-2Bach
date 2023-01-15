@@ -1,4 +1,5 @@
-import { bloques1_2, bloque2_3 } from '@/utils/dataCronologia'
+import { cronoBloques1_2, cronoBloque2_3 } from '@/utils/dataCronologia'
+import { vocBloques1_2, vocBloques3_4 } from '@/utils/dataVocabulario'
 
 export default function Home() {
   return (
