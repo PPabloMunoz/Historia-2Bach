@@ -79,7 +79,7 @@ export const cronoBloques1_2: Cronologia[] = [
   }
 ]
 
-export const cronoBloque2_3: Cronologia[] = [
+export const cronoBloque3_4: Cronologia[] = [
   {
     id: 1,
     name: 'Inquisición'
@@ -195,5 +195,36 @@ export const cronoBloque2_3: Cronologia[] = [
   {
     id: 29,
     name: 'Canal de Castilla'
+  }
+]
+
+export const cronoBloque5_6: Cronologia[] = [
+  {
+    id: 1,
+    name: 'Tratado de Fontainebleau'
+  },
+  {
+    id: 2,
+    name: 'Motín de Aranjuez'
+  },
+  {
+    id: 3,
+    name: 'Tratado de Fontainebleau'
+  },
+  {
+    id: 4,
+    name: 'Junta Suprema Central'
+  },
+  {
+    id: 5,
+    name: 'Cortes de Cádiz'
+  },
+  {
+    id: 6,
+    name: 'Pronunciamiento de Riego'
+  },
+  {
+    id: 7,
+    name: 'Simón Bolívar'
   }
 ]
