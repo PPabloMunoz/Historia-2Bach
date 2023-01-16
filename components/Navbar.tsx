@@ -3,10 +3,12 @@ import Link from 'next/link'
 
 export default function Navbar({
   title = 'Historia 2º Bach',
-  home
+  home,
+  page
 }: {
   title?: String
   home: Boolean
+  page?: 'vocabulario' | 'cronologia' | 'ejercicios'
 }) {
   return (
     <>
@@ -19,7 +21,13 @@ export default function Navbar({
           <div>
             <ul className='flex flex-row justify-center items-center gap-4 font-medium text-lg'>
               <li>
-                <Link href='vocabulario'>Vocabulario</Link>
+                {page === 'vocabulario' ? (
+                  <Link href='vocabulario' className='underline'>
+                    Vocabulario
+                  </Link>
+                ) : (
+                  <Link href='vocabulario'>Vocabulario</Link>
+                )}
               </li>
               <li>
                 <Link href='cronologia'>Cronología</Link>
