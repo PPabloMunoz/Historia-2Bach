@@ -30,10 +30,22 @@ export default function Navbar({
                 )}
               </li>
               <li>
-                <Link href='cronologia'>Cronología</Link>
+                {page === 'cronologia' ? (
+                  <Link href='/cronologia' className='underline'>
+                    Cronologia
+                  </Link>
+                ) : (
+                  <Link href='/cronologia'>Cronologia</Link>
+                )}
               </li>
               <li>
-                <Link href='ejercicios'>Ejercicios</Link>
+                {page === 'ejercicios' ? (
+                  <Link href='/ejercicios' className='underline'>
+                    Ejercicios
+                  </Link>
+                ) : (
+                  <Link href='/ejercicios'>Ejercicios</Link>
+                )}
               </li>
             </ul>
           </div>
