@@ -8,7 +8,7 @@ export default function Navbar({ title = 'Historia 2º Bach' }) {
         <title>{title}</title>
       </Head>
       <nav className='flex flex-row justify-start items-center h-20 text-black font-bold px-20 text-xl bg-slate-300'>
-        <h2>Historia 2º Bach</h2>
+        <Link href='/'>Historia 2º Bach</Link>
       </nav>
     </>
   )
