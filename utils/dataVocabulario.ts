@@ -35,7 +35,7 @@ export const vocBloque1: Vocabulario[] = [
     id: 6,
     name: 'Concilios de Toledo',
     description:
-      'reuniones de clérigos, nobles y altos funcionarios durante el reino visigodo donde el rey proponía medidas administrativas y religiosas'
+      'Reuniones de clérigos, nobles y altos funcionarios durante el reino visigodo donde el rey proponía medidas administrativas y religiosas'
   },
   {
     id: 7,
