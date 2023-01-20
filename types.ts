@@ -1,10 +1,10 @@
 export interface Cronologia {
-  id: Number
-  name: String
+  id: number
+  name: string
 }
 
 export interface Vocabulario {
-  id: Number
-  name: String
-  description: String
+  id: number
+  name: string
+  description: string
 }
