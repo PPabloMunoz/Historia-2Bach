@@ -4,7 +4,14 @@ export interface Cronologia {
 }
 
 export interface Vocabulario {
+  Name: string
+  Description: string
   id: number
-  name: string
-  description: string
+}
+
+export interface vocData {
+  supabaseData: {
+    title: String
+    data: { id: Number; Name: String; Description: String }[]
+  }
 }
