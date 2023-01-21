@@ -1,19 +1,10 @@
-// import {
-//   vocBloque1,
-//   vocBloque2,
-//   vocBloque3,
-//   vocBloque4,
-//   vocBloque5
-// } from '@/utils/dataVocabulario'
-
 import Navbar from '@/components/Navbar'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/supabaseClient'
 import { Vocabulario } from '@/types'
-import { PostgrestError, PostgrestResponse } from '@supabase/supabase-js'
 
 export default function Cronologia() {
-  const [supabaseData, setSupabaseData] = useState<Vocabulario[] | T[]>()
+  const [supabaseData, setSupabaseData] = useState<Vocabulario[]>()
   const [title, setTitle] = useState<String>('Bloque 1')
 
   useEffect(() => {
@@ -25,8 +16,8 @@ export default function Cronologia() {
     if (error) {
       console.error('An error ocurred: ', error.message)
     }
-    console.log(data)
-    setSupabaseData(data)
+    // console.log(data)
+    setSupabaseData(data!)
   }
   return (
     <>
