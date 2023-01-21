@@ -8,10 +8,3 @@ export interface Vocabulario {
   Description: string
   id: number
 }
-
-export interface vocData {
-  supabaseData: {
-    title: String
-    data: { id: Number; Name: String; Description: String }[]
-  }
-}
