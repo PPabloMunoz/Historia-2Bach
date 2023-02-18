@@ -22,7 +22,7 @@ export default function CronologiaPage() {
   useEffect(() => {
     getData('cronoBloques1_2', setCrono1)
     getData('cronoBloques3_4', setCrono2)
-    getData('cronoBloques5_6', setCrono3)
+    getData('cronoBloques5_8', setCrono3)
   }, [])
 
   return (
@@ -39,7 +39,7 @@ export default function CronologiaPage() {
             className='cursor-pointer underline mb-5 text-2xl'
             // onClick={() => setSupabaseData(cronoBloques1_2)}
           >
-            Bloques 1 y 2
+            Bloques 1 al 2
           </h3>
           <div className='font-normal text-md'>
             {crono1?.map((item, i) => (
@@ -54,7 +54,7 @@ export default function CronologiaPage() {
             className='cursor-pointer underline mb-5 text-2xl'
             // onClick={() => setSupabaseData(cronoBloque3_4)}
           >
-            Bloques 3 y 4
+            Bloques 3 al 4
           </h3>
           <div className='font-normal text-md'>
             {crono2?.map((item, i) => (
@@ -69,7 +69,7 @@ export default function CronologiaPage() {
             className='cursor-pointer underline mb-5 text-2xl'
             // onClick={() => setSupabaseData(cronoBloque5_6)}
           >
-            Bloques 5 y 6
+            Bloques 5 al 8
           </h3>
           <div className='font-normal text-md'>
             {crono3?.map((item, i) => (
