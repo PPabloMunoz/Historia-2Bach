@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { useUserContext } from '@/utils/UserContext'
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
+
 export default function Navbar({
   title = 'Historia 2º Bach',
   home,
@@ -10,12 +13,14 @@ export default function Navbar({
   home: Boolean
   page?: 'vocabulario' | 'cronologia' | 'ejercicios'
 }) {
+  const { theme, changeTheme } = useUserContext()
+
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <nav className='flex flex-row justify-around items-center h-20 text-black font-bold text-xl bg-slate-300'>
+      <nav className='flex flex-row justify-around items-center h-20 text-black font-bold text-xl bg-slate-300 relative'>
         <Link href='/'>Historia 2º Bach</Link>
         {!home && (
           <div>
@@ -50,6 +55,21 @@ export default function Navbar({
             </ul>
           </div>
         )}
+        <div className='absolute right-0 top-0 h-full w-20 flex justify-center items-center'>
+          {theme === 'dark' ? (
+            <BsFillSunFill
+              size={30}
+              className='cursor-pointer'
+              onClick={changeTheme}
+            />
+          ) : (
+            <BsFillMoonFill
+              size={30}
+              className='cursor-pointer'
+              onClick={changeTheme}
+            />
+          )}
+        </div>
       </nav>
     </>
   )
