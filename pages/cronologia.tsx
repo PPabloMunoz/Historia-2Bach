@@ -8,11 +8,13 @@ import { supabase } from '@/supabaseClient'
 import { useState, useEffect } from 'react'
 import { Cronologia } from '@/types'
 import Navbar from '@/components/Navbar'
+import { useUserContext } from '@/utils/UserContext'
 
 export default function CronologiaPage() {
   const [crono1, setCrono1] = useState<Array<{ id: Number; Name: String }>>()
   const [crono2, setCrono2] = useState<Array<{ id: Number; Name: String }>>()
   const [crono3, setCrono3] = useState<Array<{ id: Number; Name: String }>>()
+  const { theme } = useUserContext()
 
   async function getData(block: string, functionSet: Function) {
     const { data, error } = await supabase.from(block).select()
@@ -26,14 +28,14 @@ export default function CronologiaPage() {
   }, [])
 
   return (
-    <>
+    <div className={theme === 'dark' ? 'dark bg-neutral-800 text-white' : ''}>
       <Navbar
         title='Cronología - Historia 2º Bach'
         home={false}
         page='cronologia'
       />
       <h1 className='text-5xl font-bold text-center mt-6 mb-20'>Cronología</h1>
-      <div className='flex flex-row justify-evenly items-start gap-4 text-xl font-medium pb-10 mb-10'>
+      <div className='flex flex-row justify-evenly items-start gap-4 text-xl font-medium pb-10'>
         <div>
           <h3
             className='cursor-pointer underline mb-5 text-2xl'
@@ -80,6 +82,6 @@ export default function CronologiaPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

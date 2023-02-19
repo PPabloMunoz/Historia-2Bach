@@ -20,8 +20,10 @@ export default function Navbar({
       <Head>
         <title>{title}</title>
       </Head>
-      <nav className='flex flex-row justify-around items-center h-20 text-black font-bold text-xl bg-slate-300 relative'>
-        <Link href='/'>Historia 2º Bach</Link>
+      <nav className='flex flex-row justify-around items-center h-20 text-black font-bold text-xl bg-slate-300 relative dark:bg-neutral-600 dark:text-white'>
+        <Link href='/' className='text-2xl'>
+          Historia 2º Bach
+        </Link>
         {!home && (
           <div>
             <ul className='flex flex-row justify-center items-center gap-4 font-medium text-lg'>
@@ -61,6 +63,7 @@ export default function Navbar({
               size={30}
               className='cursor-pointer'
               onClick={changeTheme}
+              color='#fff'
             />
           ) : (
             <BsFillMoonFill

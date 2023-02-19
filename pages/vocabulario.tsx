@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react'
 import { supabase } from '@/supabaseClient'
 import { Vocabulario } from '@/types'
 
+import { useUserContext } from '@/utils/UserContext'
+
 export default function Cronologia() {
   const [supabaseData, setSupabaseData] = useState<Vocabulario[]>()
   const [title, setTitle] = useState<String>('Bloque 1')
+  const { theme } = useUserContext()
 
   useEffect(() => {
     getData('vocBloque1')
@@ -20,14 +23,18 @@ export default function Cronologia() {
     setSupabaseData(data!)
   }
   return (
-    <>
+    <div
+      className={
+        theme === 'dark' ? 'dark bg-neutral-800 text-white min-h-screen' : ''
+      }
+    >
       <Navbar
         title='Cronología - Historia 2º Bach'
         home={false}
         page='vocabulario'
       />
       <h1 className='text-5xl font-bold text-center mt-6 mb-20'>Vocabulario</h1>
-      <div className='flex flex-row justify-evenly items-center gap-4 text-xl font-medium pb-10 mb-10 border-b border-black'>
+      <div className='flex flex-row justify-evenly items-center gap-4 text-xl font-medium pb-10 mb-10 border-b border-black dark:border-white'>
         <p
           className='cursor-pointer'
           onClick={() => {
@@ -78,7 +85,9 @@ export default function Cronologia() {
       <div className='w-full flex flex-col justify-center items-center'>
         {supabaseData ? (
           <div className='w-2/4'>
-            <h3 className='text-3xl font-bold mb-5 text-center'>{title}</h3>
+            <h3 className='text-3xl font-bold mb-16 underline text-center'>
+              {title}
+            </h3>
             {supabaseData.map((item) => (
               <div key={item.id}>
                 <p className='font-bold'>{item.Name}</p>
@@ -91,6 +100,6 @@ export default function Cronologia() {
         )}
       </div>
       <div className='h-20' />
-    </>
+    </div>
   )
 }

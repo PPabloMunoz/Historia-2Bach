@@ -1,12 +1,20 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { BiUpArrowAlt } from 'react-icons/bi'
+import { useUserContext } from '@/utils/UserContext'
 
 import buttonStyles from '@/styles/button.module.css'
+import { useEffect } from 'react'
 
 export default function Home() {
+  const { theme } = useUserContext()
+
   return (
-    <>
+    <div
+      className={
+        theme === 'dark' ? 'dark bg-neutral-800 text-white min-h-screen' : ''
+      }
+    >
       <Navbar home={true} />
       <h1 className='text-6xl font-bold text-center mt-6 mb-20'>
         Historia 2º Bach
@@ -34,6 +42,6 @@ export default function Home() {
           <BiUpArrowAlt size={140} className='hidden sm:block' />
         </div>
       </div>
-    </>
+    </div>
   )
 }
