@@ -84,16 +84,18 @@ export default function Cronologia() {
 
       <div className='w-full flex flex-col justify-center items-center'>
         {supabaseData ? (
-          <div className='w-2/4'>
+          <div className='max-w-3xl'>
             <h3 className='text-3xl font-bold mb-16 underline text-center'>
               {title}
             </h3>
-            {supabaseData.map((item) => (
-              <div key={item.id}>
-                <p className='font-bold'>{item.Name}</p>
-                <p>- {item.Description}</p>
-              </div>
-            ))}
+            <div className='flex flex-col justify-start items-start gap-5'>
+              {supabaseData.map((item) => (
+                <div key={item.id}>
+                  <p className='font-bold'>{item.Name}</p>
+                  <p>- {item.Description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
           <p className='font-bold text-3xl text-center'>Loading...</p>
