@@ -1,23 +1,17 @@
-import {
-  cronoBloques1_2,
-  cronoBloque3_4,
-  cronoBloque5_6
-} from '@/utils/dataCronologia'
 import { supabase } from '@/supabaseClient'
 
 import { useState, useEffect } from 'react'
-import { Cronologia } from '@/types'
 import Navbar from '@/components/Navbar'
 import { useUserContext } from '@/utils/UserContext'
 
 export default function CronologiaPage() {
-  const [crono1, setCrono1] = useState<Array<{ id: Number; Name: String }>>()
-  const [crono2, setCrono2] = useState<Array<{ id: Number; Name: String }>>()
-  const [crono3, setCrono3] = useState<Array<{ id: Number; Name: String }>>()
+  const [crono1, setCrono1] = useState<Array<{ id: number; Name: string }>>()
+  const [crono2, setCrono2] = useState<Array<{ id: number; Name: string }>>()
+  const [crono3, setCrono3] = useState<Array<{ id: number; Name: string }>>()
   const { theme } = useUserContext()
 
   async function getData(block: string, functionSet: Function) {
-    const { data, error } = await supabase.from(block).select()
+    const { data } = await supabase.from(block).select()
     functionSet(data)
   }
 
@@ -45,37 +39,31 @@ export default function CronologiaPage() {
           </h3>
           <div className='font-normal text-md'>
             {crono1?.map((item, i) => (
-              <p className='text-base'>
+              <p className='text-base' key={item.id}>
                 {i + 1}. {item.Name}
               </p>
             ))}
           </div>
         </div>
         <div>
-          <h3
-            className='cursor-pointer underline mb-5 text-2xl'
-            // onClick={() => setSupabaseData(cronoBloque3_4)}
-          >
+          <h3 className='cursor-pointer underline mb-5 text-2xl'>
             Bloques 3 al 4
           </h3>
           <div className='font-normal text-md'>
             {crono2?.map((item, i) => (
-              <p className='text-base'>
+              <p className='text-base' key={item.id}>
                 {i + 1}. {item.Name}
               </p>
             ))}
           </div>
         </div>
         <div>
-          <h3
-            className='cursor-pointer underline mb-5 text-2xl'
-            // onClick={() => setSupabaseData(cronoBloque5_6)}
-          >
+          <h3 className='cursor-pointer underline mb-5 text-2xl'>
             Bloques 5 al 8
           </h3>
           <div className='font-normal text-md'>
             {crono3?.map((item, i) => (
-              <p className='text-base'>
+              <p className='text-base' key={item.id}>
                 {i + 1}. {item.Name}
               </p>
             ))}
