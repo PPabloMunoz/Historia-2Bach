@@ -51,7 +51,12 @@ export default function CronologiaPage() {
       <h1 className='text-5xl font-bold text-center mt-6 mb-20'>Ejercicios</h1>
       <div className='text-center text-5xl flex flex-col justify-center items-center gap-32 '>
         <p>Disponible dentro de poco</p>
-        <Image src={loading.src} alt='my-gif' />
+        <Image
+          src={loading.src}
+          alt='my-gif'
+          width={loading.width}
+          height={loading.height}
+        />
       </div>
     </div>
   )
