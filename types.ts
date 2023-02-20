@@ -4,7 +4,7 @@ export interface Cronologia {
 }
 
 export interface Vocabulario {
-  Name: string
-  Description: string
+  name: string
+  description: string
   id: number
 }
