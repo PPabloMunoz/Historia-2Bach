@@ -1,13 +1,14 @@
-import Navbar from '@/components/Navbar'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/supabaseClient'
+
+import Navbar from '@/components/Navbar'
+import { useUserContext } from '@/utils/UserContext'
 import { Vocabulario } from '@/types'
 
-import { useUserContext } from '@/utils/UserContext'
-
 export default function Cronologia() {
-  const [supabaseData, setSupabaseData] = useState<Vocabulario[]>()
-  const [title, setTitle] = useState<String>('Bloque 1')
+  const [supabaseData, setSupabaseData] = useState<Array<Vocabulario>>()
+  const [title, setTitle] = useState<string>('Bloque 1')
+
   const { theme } = useUserContext()
 
   useEffect(() => {
@@ -19,7 +20,6 @@ export default function Cronologia() {
     if (error) {
       console.error('An error ocurred: ', error.message)
     }
-    // console.log(data)
     setSupabaseData(data!)
   }
   return (
@@ -91,8 +91,8 @@ export default function Cronologia() {
             <div className='flex flex-col justify-start items-start gap-5'>
               {supabaseData.map((item) => (
                 <div key={item.id}>
-                  <p className='font-bold'>{item.Name}</p>
-                  <p>- {item.Description}</p>
+                  <p className='font-bold'>{item.name}</p>
+                  <p>- {item.description}</p>
                 </div>
               ))}
             </div>

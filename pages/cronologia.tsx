@@ -1,13 +1,15 @@
+import { useState, useEffect } from 'react'
 import { supabase } from '@/supabaseClient'
 
-import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar'
 import { useUserContext } from '@/utils/UserContext'
+import { Cronologia } from '@/types'
 
 export default function CronologiaPage() {
-  const [crono1, setCrono1] = useState<Array<{ id: number; Name: string }>>()
-  const [crono2, setCrono2] = useState<Array<{ id: number; Name: string }>>()
-  const [crono3, setCrono3] = useState<Array<{ id: number; Name: string }>>()
+  const [crono1, setCrono1] = useState<Array<Cronologia>>()
+  const [crono2, setCrono2] = useState<Array<Cronologia>>()
+  const [crono3, setCrono3] = useState<Array<Cronologia>>()
+
   const { theme } = useUserContext()
 
   async function getData(block: string, functionSet: Function) {
@@ -40,7 +42,7 @@ export default function CronologiaPage() {
           <div className='font-normal text-md'>
             {crono1?.map((item, i) => (
               <p className='text-base' key={item.id}>
-                {i + 1}. {item.Name}
+                {i + 1}. {item.name}
               </p>
             ))}
           </div>
@@ -52,7 +54,7 @@ export default function CronologiaPage() {
           <div className='font-normal text-md'>
             {crono2?.map((item, i) => (
               <p className='text-base' key={item.id}>
-                {i + 1}. {item.Name}
+                {i + 1}. {item.name}
               </p>
             ))}
           </div>
@@ -64,7 +66,7 @@ export default function CronologiaPage() {
           <div className='font-normal text-md'>
             {crono3?.map((item, i) => (
               <p className='text-base' key={item.id}>
-                {i + 1}. {item.Name}
+                {i + 1}. {item.name}
               </p>
             ))}
           </div>
