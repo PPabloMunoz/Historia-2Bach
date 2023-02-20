@@ -1,9 +1,10 @@
 // import { useState, useEffect } from 'react'
+import Image from 'next/image'
+
+import { useUserContext } from '@/utils/UserContext'
 
 import Navbar from '@/components/Navbar'
 import loading from '../public/loading.gif'
-import { useUserContext } from '@/utils/UserContext'
-import Image from 'next/image'
 
 // function aleatory(data: Cronologia[], iterations: Number) {
 //   const random: Cronologia[] = []

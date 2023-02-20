@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import { BiUpArrowAlt } from 'react-icons/bi'
-import { useUserContext } from '@/utils/UserContext'
 
 import buttonStyles from '@/styles/button.module.css'
+
+import { BiUpArrowAlt } from 'react-icons/bi'
+import { useUserContext } from '@/utils/UserContext'
 
 export default function Home() {
   const { theme } = useUserContext()
