@@ -13,7 +13,7 @@ export default function CronologiaPage() {
   const [range, setRange] = useState<number>(9)
   const [blockSelected, setBlockSelected] = useState<number>(1)
   const [aleatory, setAleatory] = useState<Array<Cronologia>>()
-  const [mySolution, setMySolution] = useState<Array<Cronologia>>()
+  const [mySolution, setMySolution] = useState<Array<Cronologia>>([])
 
   const [solution, setSolution] = useState<Array<Cronologia>>()
   const [viewSolution, setViewSolution] = useState<Boolean>(false)
@@ -29,6 +29,14 @@ export default function CronologiaPage() {
   function changeWords() {
     aleatoryFunction(blockSelected, range, setAleatory)
   }
+
+  function addToMySolution(item: Cronologia) {
+    const newArray = [...mySolution!, item]
+
+    setMySolution(newArray)
+  }
+
+  // function removeFromMySolution(item: Cronologia) {}
 
   return (
     <div
@@ -122,14 +130,19 @@ export default function CronologiaPage() {
         )}
       </div>
 
+      <button onClick={() => console.log(mySolution)}>
+        console my solution
+      </button>
+
       <main className='flex flex-row justify-evenly items-start gap-5 container m-auto pb-12'>
         <div className='flex flex-col justify-start items-center'>
           <h2 className='font-bold text-xl text-center mb-7'>Palabras</h2>
           <section className='flex flex-col justify-center items-center gap-2 min-w-[200px]'>
-            {aleatory?.map((item) => (
+            {aleatory?.map((item: Cronologia) => (
               <p
                 key={item.id}
-                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white'
+                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white cursor-pointer'
+                onClick={() => addToMySolution(item)}
               >
                 {item.name}
               </p>
@@ -138,6 +151,16 @@ export default function CronologiaPage() {
         </div>
         <div>
           <h2 className='font-bold text-xl text-center mb-7'>Mi Solución</h2>
+          <section className='flex flex-col justify-center items-center gap-2 min-w-[200px]'>
+            {mySolution?.map((item) => (
+              <p
+                key={item.id}
+                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white'
+              >
+                {item.name}
+              </p>
+            ))}
+          </section>
         </div>
         <div className='relative'>
           <h2 className='font-bold text-xl text-center mb-7'>Solucion</h2>
