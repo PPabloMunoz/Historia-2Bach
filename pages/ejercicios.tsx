@@ -78,6 +78,7 @@ export default function CronologiaPage() {
               type='range'
               min={4}
               max={19}
+              defaultValue={9}
               className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
               onChange={(e) => setRange(parseInt(e.target.value))}
             />
@@ -95,6 +96,7 @@ export default function CronologiaPage() {
               type='range'
               min={4}
               max={29}
+              defaultValue={9}
               className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
               onChange={(e) => setRange(parseInt(e.target.value))}
             />
@@ -112,6 +114,7 @@ export default function CronologiaPage() {
               type='range'
               min={4}
               max={30}
+              defaultValue={9}
               className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
               onChange={(e) => setRange(parseInt(e.target.value))}
             />
