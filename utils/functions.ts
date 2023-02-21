@@ -76,3 +76,7 @@ export async function sortArray(
   setFunction(finalArray)
   return finalArray
 }
+
+export function checkItemOnArray(object: Cronologia, array: Array<Cronologia>) {
+  return array.includes(object)
+}
