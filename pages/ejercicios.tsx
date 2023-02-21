@@ -71,7 +71,7 @@ export default function CronologiaPage() {
           <option value={3}>Bloques 5 al 8</option>
         </select>
         <button
-          className='bg-purple-600 py-2 px-2 rounded-lg'
+          className='bg-purple-600 py-2 px-2 rounded-lg text-white'
           onClick={() => {
             changeWords()
             setViewSolution(false)
