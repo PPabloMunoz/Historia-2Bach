@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 
 import { useUserContext } from '@/utils/UserContext'
-import { aleatoryFunction, sortArray } from '@/utils/functions'
+import {
+  aleatoryFunction,
+  sortArray,
+  checkItemOnArray
+} from '@/utils/functions'
 
 import Navbar from '@/components/Navbar'
 import { Cronologia } from '@/types'
@@ -36,7 +40,12 @@ export default function CronologiaPage() {
     setMySolution(newArray)
   }
 
-  // function removeFromMySolution(item: Cronologia) {}
+  function removeFromMySolution(item: Cronologia) {
+    const temp = mySolution
+    const array = temp.filter((object) => object.id !== item.id)
+
+    setMySolution(array)
+  }
 
   return (
     <div
@@ -66,6 +75,7 @@ export default function CronologiaPage() {
           onClick={() => {
             changeWords()
             setViewSolution(false)
+            setMySolution([])
           }}
         >
           Cambiar palabras
@@ -130,10 +140,6 @@ export default function CronologiaPage() {
         )}
       </div>
 
-      <button onClick={() => console.log(mySolution)}>
-        console my solution
-      </button>
-
       <main className='flex flex-row justify-evenly items-start gap-5 container m-auto pb-12'>
         <div className='flex flex-col justify-start items-center'>
           <h2 className='font-bold text-xl text-center mb-7'>Palabras</h2>
@@ -141,8 +147,16 @@ export default function CronologiaPage() {
             {aleatory?.map((item: Cronologia) => (
               <p
                 key={item.id}
-                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white cursor-pointer'
-                onClick={() => addToMySolution(item)}
+                className={`bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white ${
+                  checkItemOnArray(item, mySolution)
+                    ? 'bg-red-600'
+                    : 'cursor-pointer'
+                }`}
+                onClick={() => {
+                  if (!checkItemOnArray(item, mySolution)) {
+                    addToMySolution(item)
+                  }
+                }}
               >
                 {item.name}
               </p>
@@ -155,7 +169,10 @@ export default function CronologiaPage() {
             {mySolution?.map((item) => (
               <p
                 key={item.id}
-                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white'
+                className='bg-blue-600 w-full text-center rounded-lg py-2 px-3 text-sm text-white dark:text-white cursor-pointer'
+                onClick={() => {
+                  removeFromMySolution(item)
+                }}
               >
                 {item.name}
               </p>
