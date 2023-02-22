@@ -30,13 +30,12 @@ export default function CronologiaPage() {
         home={false}
         page='cronologia'
       />
-      <h1 className='text-5xl font-bold text-center mt-6 mb-20'>Cronología</h1>
-      <div className='flex flex-row justify-evenly items-start gap-4 text-xl font-medium pb-10'>
+      <h1 className='text-3xl lg:text-5xl font-bold text-center mt-6 mb-7 lg:mb-20'>
+        Cronología
+      </h1>
+      <div className='flex flex-col lg:flex-row justify-evenly items-start gap-4 text-xl font-medium pb-10 mx-7 lg:m-auto'>
         <div>
-          <h3
-            className='cursor-pointer underline mb-5 text-2xl'
-            // onClick={() => setSupabaseData(cronoBloques1_2)}
-          >
+          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
             Bloques 1 al 2
           </h3>
           <div className='font-normal text-md'>
@@ -48,7 +47,7 @@ export default function CronologiaPage() {
           </div>
         </div>
         <div>
-          <h3 className='cursor-pointer underline mb-5 text-2xl'>
+          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
             Bloques 3 al 4
           </h3>
           <div className='font-normal text-md'>
@@ -60,7 +59,7 @@ export default function CronologiaPage() {
           </div>
         </div>
         <div>
-          <h3 className='cursor-pointer underline mb-5 text-2xl'>
+          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
             Bloques 5 al 8
           </h3>
           <div className='font-normal text-md'>
