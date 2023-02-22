@@ -29,7 +29,7 @@ export default function Cronologia() {
       }
     >
       <Navbar
-        title='Cronología - Historia 2º Bach'
+        title='Vocabulario - Historia 2º Bach'
         home={false}
         page='vocabulario'
       />
