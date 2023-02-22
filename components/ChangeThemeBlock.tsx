@@ -6,7 +6,7 @@ export default function ChangeThemeBlock() {
 
   return (
     <div
-      className='fixed bottom-8 right-12 flex justify-center items-center p-2 bg-black/30 rounded-lg opacity-60'
+      className='fixed bottom-6 sm:bottom-8 right-8 sm:right-12 flex justify-center items-center p-2 bg-black/30 rounded-lg opacity-60'
       onClick={changeTheme}
     >
       {theme === 'dark' ? (
