@@ -1,20 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
-import { useUserContext } from '@/utils/UserContext'
-import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
+import { NavbarTypes } from '@/types'
 
 export default function Navbar({
   title = 'Historia 2º Bach',
   home,
   page
-}: {
-  title?: String
-  home: Boolean
-  page?: 'vocabulario' | 'cronologia' | 'ejercicios'
-}) {
-  const { theme, changeTheme } = useUserContext()
-
+}: NavbarTypes) {
   return (
     <>
       <Head>
@@ -57,22 +49,6 @@ export default function Navbar({
             </ul>
           </div>
         )}
-        <div className='absolute right-2 top-0 h-full lg:w-20 flex justify-center items-center'>
-          {theme === 'dark' ? (
-            <BsFillSunFill
-              size={30}
-              className='cursor-pointer text-3xl'
-              onClick={changeTheme}
-              color='#fff'
-            />
-          ) : (
-            <BsFillMoonFill
-              size={30}
-              className='cursor-pointer text-3xl'
-              onClick={changeTheme}
-            />
-          )}
-        </div>
       </nav>
     </>
   )

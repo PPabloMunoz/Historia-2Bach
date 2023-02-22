@@ -8,3 +8,9 @@ export interface Vocabulario {
   description: string
   id: number
 }
+
+export interface NavbarTypes {
+  title?: String
+  home: Boolean
+  page?: 'vocabulario' | 'cronologia' | 'ejercicios'
+}
