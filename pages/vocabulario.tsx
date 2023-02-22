@@ -33,8 +33,10 @@ export default function Cronologia() {
         home={false}
         page='vocabulario'
       />
-      <h1 className='text-5xl font-bold text-center mt-6 mb-20'>Vocabulario</h1>
-      <div className='flex flex-row justify-evenly items-center gap-4 text-xl font-medium pb-10 mb-10 border-b border-black dark:border-white'>
+      <h1 className='text-3xl lg:text-5xl font-bold text-center mt-6 mb-8 lg:mb-20'>
+        Vocabulario
+      </h1>
+      <div className='flex flex-row justify-evenly items-center gap-4 text-center text-lg lg:text-xl font-medium pb-3 lg:pb-10 mb-6 lg:mb-10 border-b border-black dark:border-white'>
         <p
           className='cursor-pointer'
           onClick={() => {
@@ -82,13 +84,13 @@ export default function Cronologia() {
         </p>
       </div>
 
-      <div className='w-full flex flex-col justify-center items-center'>
+      <div className='w-full flex flex-col justify-center items-center pb-20'>
         {supabaseData ? (
           <div className='max-w-3xl'>
-            <h3 className='text-3xl font-bold mb-16 underline text-center'>
+            <h3 className='text-2xl lg:text-3xl font-bold mb-8 lg:mb-16 underline text-center'>
               {title}
             </h3>
-            <div className='flex flex-col justify-start items-start gap-5'>
+            <div className='flex flex-col justify-start items-start gap-5 mx-6'>
               {supabaseData.map((item) => (
                 <div key={item.id}>
                   <p className='font-bold'>{item.name}</p>
@@ -101,7 +103,6 @@ export default function Cronologia() {
           <p className='font-bold text-3xl text-center'>Loading...</p>
         )}
       </div>
-      <div className='h-20' />
     </div>
   )
 }
