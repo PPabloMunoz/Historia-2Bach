@@ -4,6 +4,7 @@ import { supabase } from '@/supabaseClient'
 import Navbar from '@/components/Navbar'
 import { useUserContext } from '@/utils/UserContext'
 import { Cronologia } from '@/types'
+import ChangeThemeBlock from '@/components/ChangeThemeBlock'
 
 export default function CronologiaPage() {
   const [crono1, setCrono1] = useState<Array<Cronologia>>()
@@ -71,6 +72,7 @@ export default function CronologiaPage() {
           </div>
         </div>
       </div>
+      <ChangeThemeBlock />
     </div>
   )
 }

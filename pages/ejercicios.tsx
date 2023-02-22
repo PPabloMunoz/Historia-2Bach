@@ -10,6 +10,7 @@ import {
 import Navbar from '@/components/Navbar'
 import { Cronologia } from '@/types'
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
+import ChangeThemeBlock from '@/components/ChangeThemeBlock'
 
 export default function CronologiaPage() {
   const { theme } = useUserContext()
@@ -239,6 +240,7 @@ export default function CronologiaPage() {
           </div>
         </div>
       )}
+      <ChangeThemeBlock />
     </div>
   )
 }

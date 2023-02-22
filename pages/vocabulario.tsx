@@ -4,6 +4,7 @@ import { supabase } from '@/supabaseClient'
 import Navbar from '@/components/Navbar'
 import { useUserContext } from '@/utils/UserContext'
 import { Vocabulario } from '@/types'
+import ChangeThemeBlock from '@/components/ChangeThemeBlock'
 
 export default function Cronologia() {
   const [supabaseData, setSupabaseData] = useState<Array<Vocabulario>>()
@@ -103,6 +104,7 @@ export default function Cronologia() {
           <p className='font-bold text-3xl text-center'>Loading...</p>
         )}
       </div>
+      <ChangeThemeBlock />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
+import ChangeThemeBlock from '@/components/ChangeThemeBlock'
 
 import buttonStyles from '@/styles/button.module.css'
 
@@ -51,6 +52,7 @@ export default function Home() {
           <BiUpArrowAlt size={140} className='hidden sm:block' />
         </div>
       </div>
+      <ChangeThemeBlock />
     </div>
   )
 }
