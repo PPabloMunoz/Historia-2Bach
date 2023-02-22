@@ -28,7 +28,6 @@ export default function CronologiaPage() {
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth)
-      console.log(window.innerWidth, 'width')
     }
 
     window.addEventListener('resize', handleResize)
