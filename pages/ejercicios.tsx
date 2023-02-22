@@ -15,16 +15,27 @@ import ChangeThemeBlock from '@/components/ChangeThemeBlock'
 export default function CronologiaPage() {
   const { theme } = useUserContext()
 
-  const [width, setWidthSize] = useState(window.innerWidth)
-  // Update window size
+  // Check if is client or server side
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Window size
+  const [windowWidth, setWindowWidth] = useState(
+    isClient ? window.innerWidth : 800
+  )
   useEffect(() => {
     function handleResize() {
-      setWidthSize(window.innerWidth)
+      setWindowWidth(window.innerWidth)
+      console.log(window.innerWidth, 'width')
     }
 
     window.addEventListener('resize', handleResize)
 
-    return () => window.removeEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   const [range, setRange] = useState<number>(9)
@@ -74,7 +85,7 @@ export default function CronologiaPage() {
       <h1 className='text-3xl lg:text-5xl font-bold text-center mt-6 mb-10'>
         Ejercicios
       </h1>
-      {width! >= 680 ? (
+      {windowWidth! >= 800 && isClient ? (
         <>
           <div className='w-full flex flex-col lg:flex-row justify-center items-center mb-6 lg:mb-10 gap-5 px-10'>
             <select
@@ -160,7 +171,7 @@ export default function CronologiaPage() {
           <main className='flex flex-row justify-evenly items-start gap-5 container m-auto pb-12'>
             <div className='flex flex-col justify-start items-center'>
               <h2 className='font-bold text-xl text-center mb-7'>Palabras</h2>
-              <section className='flex flex-col justify-center items-center gap-2 min-w-[200px]'>
+              <section className='flex flex-col justify-center items-center gap-2 min-w-[250px]'>
                 {aleatory?.map((item: Cronologia) => (
                   <p
                     key={item.id}
@@ -184,7 +195,7 @@ export default function CronologiaPage() {
               <h2 className='font-bold text-xl text-center mb-7'>
                 Mi Solución
               </h2>
-              <section className='flex flex-col justify-center items-center gap-2 min-w-[200px]'>
+              <section className='flex flex-col justify-center items-center gap-2 min-w-[250px]'>
                 {mySolution?.map((item) => (
                   <p
                     key={item.id}
@@ -201,7 +212,7 @@ export default function CronologiaPage() {
             <div className='relative'>
               <h2 className='font-bold text-xl text-center mb-7'>Solucion</h2>
               <section
-                className={`min-w-[200px] flex flex-col justify-center items-center gap-2 ${
+                className={`min-w-[250px] flex flex-col justify-center items-center gap-2 ${
                   !viewSolution && 'blur'
                 }`}
               >
@@ -230,7 +241,7 @@ export default function CronologiaPage() {
       ) : (
         <div>
           <div
-            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mx-7'
+            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mx-7 flex flex-col'
             role='alert'
           >
             <strong className='font-bold'>Su pantalla en muy pequeña</strong>
