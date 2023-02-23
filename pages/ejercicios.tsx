@@ -125,7 +125,10 @@ export default function CronologiaPage() {
                   max={19}
                   defaultValue={9}
                   className='w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer'
-                  onChange={(e) => setRange(parseInt(e.target.value))}
+                  onChange={(e) => {
+                    setRange(parseInt(e.target.value))
+                    setMySolution([])
+                  }}
                 />
               </div>
             ) : blockSelected === 2 ? (
