@@ -2,6 +2,7 @@ import { Cronologia } from '@/types'
 import { supabase } from '@/supabaseClient'
 import { cronologiaNames, vocabularioNames } from './names'
 
+// Create an aletory array from another
 export async function aleatoryFunction(
   blockNum: number,
   iterations: number,
@@ -35,6 +36,7 @@ export async function aleatoryFunction(
   }
 }
 
+// Get data from database
 export async function getData(
   block: number,
   type: 'cronologia' | 'vocabulario',
@@ -52,6 +54,7 @@ export async function getData(
   return data
 }
 
+// Get block names of Cronologia and Vocabulario
 function getCronoBlockName(block: number) {
   if (block === 1) return cronologiaNames.crono1
   if (block === 2) return cronologiaNames.crono2
@@ -73,6 +76,7 @@ function getVocBlockName(block: number) {
   throw new Error('Invalid vocabulario number block')
 }
 
+// Sort array by it id
 export async function sortArray(
   aleatoryArray: Array<Cronologia>,
   blockNum: number,
@@ -95,6 +99,7 @@ export async function sortArray(
   return finalArray
 }
 
+// Check if a item is in array
 export function checkItemOnArray(object: Cronologia, array: Array<Cronologia>) {
   return array.includes(object)
 }
