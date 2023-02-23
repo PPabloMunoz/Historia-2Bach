@@ -16,6 +16,19 @@ export default function Navbar({
     <>
       <Head>
         <title>{title}</title>
+
+        {home && (
+          <>
+            <meta
+              name='description'
+              content='Página donde puedes practicar tu conocimientos y aprender sobre el vocabulario y cronología de 2º de bachillerato de una manera muy sencilla e intuitiva'
+            />
+            <meta
+              name='keywords'
+              content='2 bach, bachillerato, historia, cronologia, vocabulario, practicar cronologia, practicar cronologia historia historia 2 bach, ejercicios cronología'
+            />
+          </>
+        )}
       </Head>
       <nav
         className='relative flex flex-row justify-around items-center h-20 text-black font-bold text-xl bg-slate-300 dark:bg-neutral-600 dark:text-white z-40'
