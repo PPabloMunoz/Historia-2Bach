@@ -34,10 +34,10 @@ export default function Cronologia() {
         home={false}
         page='vocabulario'
       />
-      <h1 className='text-3xl lg:text-5xl font-bold text-center mt-6 mb-8 lg:mb-20'>
+      <h1 className='text-3xl lg:text-5xl text-center font-bold mt-6 mb-8 lg:mb-20'>
         Vocabulario
       </h1>
-      <div className='flex flex-row justify-evenly items-center gap-4 text-center text-lg lg:text-xl font-medium pb-3 lg:pb-10 mb-6 lg:mb-10 border-b border-black dark:border-white'>
+      <div className='flex flex-row justify-evenly items-center gap-4 text-lg lg:text-xl text-center font-medium pb-3 lg:pb-10 mb-6 lg:mb-10 border-b border-black dark:border-white'>
         <p
           className='cursor-pointer'
           onClick={() => {
@@ -88,7 +88,7 @@ export default function Cronologia() {
       <div className='w-full flex flex-col justify-center items-center pb-20'>
         {supabaseData ? (
           <div className='max-w-3xl'>
-            <h3 className='text-2xl lg:text-3xl font-bold mb-8 lg:mb-16 underline text-center'>
+            <h3 className='text-2xl lg:text-3xl text-center font-bold underline mb-8 lg:mb-16'>
               {title}
             </h3>
             <div className='flex flex-col justify-start items-start gap-5 mx-6'>
@@ -101,7 +101,7 @@ export default function Cronologia() {
             </div>
           </div>
         ) : (
-          <p className='font-bold text-3xl text-center'>Loading...</p>
+          <p className='text-3xl text-center font-bold'>Loading...</p>
         )}
       </div>
       <ChangeThemeBlock />

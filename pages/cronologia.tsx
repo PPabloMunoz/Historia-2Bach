@@ -36,10 +36,10 @@ export default function CronologiaPage() {
       </h1>
       <div className='flex flex-col lg:flex-row justify-evenly items-start gap-4 text-xl font-medium pb-10 mx-7 lg:m-auto'>
         <div>
-          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
+          <h3 className='text-lg lg:text-2xl mb-5 cursor-pointer underline'>
             Bloques 1 al 2
           </h3>
-          <div className='font-normal text-md'>
+          <div className='text-md font-normal'>
             {crono1?.map((item, i) => (
               <p className='text-base' key={item.id}>
                 {i + 1}. {item.name}
@@ -48,10 +48,10 @@ export default function CronologiaPage() {
           </div>
         </div>
         <div>
-          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
+          <h3 className='text-lg lg:text-2xl mb-5 cursor-pointer underline'>
             Bloques 3 al 4
           </h3>
-          <div className='font-normal text-md'>
+          <div className='text-md font-normal'>
             {crono2?.map((item, i) => (
               <p className='text-base' key={item.id}>
                 {i + 1}. {item.name}
@@ -60,10 +60,10 @@ export default function CronologiaPage() {
           </div>
         </div>
         <div>
-          <h3 className='cursor-pointer underline mb-5 text-lg lg:text-2xl'>
+          <h3 className='text-lg lg:text-2xl mb-5 cursor-pointer underline'>
             Bloques 5 al 8
           </h3>
-          <div className='font-normal text-md'>
+          <div className='text-md font-normal'>
             {crono3?.map((item, i) => (
               <p className='text-base' key={item.id}>
                 {i + 1}. {item.name}
