@@ -1,38 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Español :es:
 
-## Getting Started
+Esto es un projecto hecho con [NextJS](https://nextjs.org/)
 
-First, run the development server:
+## Visita la página
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Puedes visitar la página [aqui](https://history-web.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contribuir en el proyecto
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Si crees que la página necesita alguna mejora o tiene algún error que crees que puedes arreglar lo único que tienes que hacer el copiar el proyecto en tu dispositivo y hacer lo cambios que veas que necesita la página.
+Para que tu código se vea reflejado en la página final lo único que tienes que hacer una pull request y esperar a que tu código se compruebe.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# English :us:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This is a [NextJS](https://nextjs.org/) project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Visit the page
 
-## Learn More
+You can visit the page [here](https://history-web.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+## Contribute in the project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you think the page needs an upgrade or it has any error and you think you can fix it, you only have to copy the code to your device and make all the changes you want.
+For your code to be on the final page, you only have to make a pull request and wait for your code to be checked
