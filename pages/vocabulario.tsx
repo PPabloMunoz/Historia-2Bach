@@ -1,28 +1,24 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '@/supabaseClient'
+import { Vocabulario, titleVocabulary } from '@/types'
 
+// Components
 import Navbar from '@/components/Navbar'
-import { useUserContext } from '@/utils/UserContext'
-import { Vocabulario } from '@/types'
 import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+
+// Functions
+import { useUserContext } from '@/utils/UserContext'
+import { getData } from '@utils/functions'
 
 export default function Cronologia() {
   const [supabaseData, setSupabaseData] = useState<Array<Vocabulario>>()
-  const [title, setTitle] = useState<string>('Bloque 1')
+  const [title, setTitle] = useState<titleVocabulary>('Bloque 1')
 
   const { theme } = useUserContext()
 
   useEffect(() => {
-    getData('vocBloque1')
+    getData(1, 'vocabulario', setSupabaseData)
   }, [])
 
-  const getData = async (block: string) => {
-    const { data, error } = await supabase.from(block).select()
-    if (error) {
-      console.error('An error ocurred: ', error.message)
-    }
-    setSupabaseData(data!)
-  }
   return (
     <div
       className={
@@ -39,50 +35,93 @@ export default function Cronologia() {
       </h1>
       <div className='flex flex-row justify-evenly items-center gap-4 text-lg lg:text-xl text-center font-medium pb-3 lg:pb-10 mb-6 lg:mb-10 border-b border-black dark:border-white'>
         <p
-          className='cursor-pointer'
+          className={`cursor-pointer ${
+            title === 'Bloque 1' && 'text-purple-600 dark:text-blue-600'
+          }`}
           onClick={() => {
-            getData('vocBloque1')
+            getData(1, 'vocabulario', setSupabaseData)
             setTitle('Bloque 1')
           }}
         >
           Bloque 1
         </p>
         <p
-          className='cursor-pointer'
+          className={`cursor-pointer ${
+            title === 'Bloque 2' && 'text-purple-600 dark:text-blue-600'
+          }`}
           onClick={() => {
-            getData('vocBloque2')
+            getData(2, 'vocabulario', setSupabaseData)
             setTitle('Bloque 2')
           }}
         >
           Bloque 2
         </p>
         <p
-          className='cursor-pointer'
+          className={`cursor-pointer ${
+            title === 'Bloque 3' && 'text-purple-600 dark:text-blue-600'
+          }`}
           onClick={() => {
-            getData('vocBloque3')
+            getData(3, 'vocabulario', setSupabaseData)
             setTitle('Bloque 3')
           }}
         >
           Bloque 3
         </p>
         <p
-          className='cursor-pointer'
+          className={`cursor-pointer ${
+            title === 'Bloque 4' && 'text-purple-600 dark:text-blue-600'
+          }`}
           onClick={() => {
-            getData('vocBloque4')
+            getData(4, 'vocabulario', setSupabaseData)
             setTitle('Bloque 4')
           }}
         >
           Bloque 4
         </p>
         <p
-          className='cursor-pointer'
+          className={`cursor-pointer ${
+            title === 'Bloque 5' && 'text-purple-600 dark:text-blue-600'
+          }`}
           onClick={() => {
-            getData('vocBloque5')
+            getData(5, 'vocabulario', setSupabaseData)
             setTitle('Bloque 5')
           }}
         >
           Bloque 5
         </p>
+        {/* <p
+          className={`cursor-pointer ${
+            title === 'Bloque 6' && 'text-purple-600 dark:text-blue-600'
+          }`}
+          onClick={() => {
+            getData(6, 'vocabulario', setSupabaseData)
+            setTitle('Bloque 6')
+          }}
+        >
+          Bloque 6
+        </p>
+        <p
+          className={`cursor-pointer ${
+            title === 'Bloque 7' && 'text-purple-600 dark:text-blue-600'
+          }`}
+          onClick={() => {
+            getData(7, 'vocabulario', setSupabaseData)
+            setTitle('Bloque 7')
+          }}
+        >
+          Bloque 7
+        </p>
+        <p
+          className={`cursor-pointer ${
+            title === 'Bloque 8' && 'text-purple-600 dark:text-blue-600'
+          }`}
+          onClick={() => {
+            getData(8, 'vocabulario', setSupabaseData)
+            setTitle('Bloque 8')
+          }}
+        >
+          Bloque 8
+        </p> */}
       </div>
 
       <div className='w-full flex flex-col justify-center items-center pb-20'>

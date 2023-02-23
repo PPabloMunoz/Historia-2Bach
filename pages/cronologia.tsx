@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '@/supabaseClient'
-
-import Navbar from '@/components/Navbar'
-import { useUserContext } from '@/utils/UserContext'
 import { Cronologia } from '@/types'
+
+// Components
+import Navbar from '@/components/Navbar'
 import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+
+// Functions
+import { getData } from '@/utils/functions'
+import { useUserContext } from '@/utils/UserContext'
 
 export default function CronologiaPage() {
   const [crono1, setCrono1] = useState<Array<Cronologia>>()
@@ -13,15 +16,10 @@ export default function CronologiaPage() {
 
   const { theme } = useUserContext()
 
-  async function getData(block: string, functionSet: Function) {
-    const { data } = await supabase.from(block).select()
-    functionSet(data)
-  }
-
   useEffect(() => {
-    getData('cronoBloques1_2', setCrono1)
-    getData('cronoBloques3_4', setCrono2)
-    getData('cronoBloques5_8', setCrono3)
+    getData(1, 'cronologia', setCrono1)
+    getData(2, 'cronologia', setCrono2)
+    getData(3, 'cronologia', setCrono3)
   }, [])
 
   return (

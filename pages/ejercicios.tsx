@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react'
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
+import { Cronologia } from '@/types'
 
+// Components
+import Navbar from '@/components/Navbar'
+import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+
+// Functions
 import { useUserContext } from '@/utils/UserContext'
 import {
   aleatoryFunction,
@@ -7,14 +14,7 @@ import {
   checkItemOnArray
 } from '@/utils/functions'
 
-import Navbar from '@/components/Navbar'
-import { Cronologia } from '@/types'
-import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
-import ChangeThemeBlock from '@/components/ChangeThemeBlock'
-
 export default function CronologiaPage() {
-  const { theme } = useUserContext()
-
   // Check if is client or server side
   const [isClient, setIsClient] = useState(false)
   useEffect(() => {
@@ -37,20 +37,25 @@ export default function CronologiaPage() {
     }
   }, [])
 
+  const { theme } = useUserContext()
+
   const [range, setRange] = useState<number>(9)
   const [blockSelected, setBlockSelected] = useState<number>(1)
-  const [aleatory, setAleatory] = useState<Array<Cronologia>>()
+  const [aleatory, setAleatory] = useState<Array<Cronologia>>([])
+
   const [mySolution, setMySolution] = useState<Array<Cronologia>>([])
 
-  const [solution, setSolution] = useState<Array<Cronologia>>()
+  const [solution, setSolution] = useState<Array<Cronologia>>([])
   const [viewSolution, setViewSolution] = useState<Boolean>(false)
 
+  // Create Aleatory Word Array
   useEffect(() => {
     aleatoryFunction(blockSelected, range, setAleatory)
   }, [blockSelected, range])
 
+  // Sort Aleatory Array
   useEffect(() => {
-    sortArray(aleatory!, blockSelected, setSolution)
+    sortArray(aleatory, blockSelected, setSolution)
   }, [aleatory, blockSelected])
 
   function changeWords() {
@@ -58,7 +63,7 @@ export default function CronologiaPage() {
   }
 
   function addToMySolution(item: Cronologia) {
-    const newArray = [...mySolution!, item]
+    const newArray = [...mySolution, item]
 
     setMySolution(newArray)
   }
@@ -84,7 +89,7 @@ export default function CronologiaPage() {
       <h1 className='text-3xl lg:text-5xl text-center font-bold mt-6 mb-10'>
         Ejercicios
       </h1>
-      {windowWidth! >= 800 && isClient ? (
+      {windowWidth >= 800 && isClient ? (
         <>
           <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-5 mb-6 lg:mb-10 px-10'>
             <select
