@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { Cronologia } from '@/types'
 
 // Components
-import Navbar from '@/components/Navbar'
-import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+import Navbar from '@components/Navbar'
+import ChangeThemeBlock from '@components/ChangeThemeBlock'
 
 // Functions
-import { getData } from '@/utils/functions'
-import { useUserContext } from '@/utils/UserContext'
+import { getData } from '@utils/functions'
+import { useUserContext } from '@utils/UserContext'
 
 export default function CronologiaPage() {
   const [crono1, setCrono1] = useState<Array<Cronologia>>()

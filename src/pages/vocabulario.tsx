@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import { Vocabulario, titleVocabulary } from '@/types'
 
 // Components
-import Navbar from '@/components/Navbar'
-import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+import Navbar from '@components/Navbar'
+import ChangeThemeBlock from '@components/ChangeThemeBlock'
 
 // Functions
-import { useUserContext } from '@/utils/UserContext'
+import { useUserContext } from '@utils/UserContext'
 import { getData } from '@utils/functions'
 
 export default function Cronologia() {

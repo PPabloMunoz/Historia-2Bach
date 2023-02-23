@@ -3,16 +3,12 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import { Cronologia } from '@/types'
 
 // Components
-import Navbar from '@/components/Navbar'
-import ChangeThemeBlock from '@/components/ChangeThemeBlock'
+import Navbar from '@components/Navbar'
+import ChangeThemeBlock from '@components/ChangeThemeBlock'
 
 // Functions
-import { useUserContext } from '@/utils/UserContext'
-import {
-  aleatoryFunction,
-  sortArray,
-  checkItemOnArray
-} from '@/utils/functions'
+import { useUserContext } from '@utils/UserContext'
+import { aleatoryFunction, sortArray, checkItemOnArray } from '@utils/functions'
 
 export default function CronologiaPage() {
   // Check if is client or server side

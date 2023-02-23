@@ -1,4 +1,4 @@
-import { useUserContext } from '@/utils/UserContext'
+import { useUserContext } from '@utils/UserContext'
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
 
 export default function ChangeThemeBlock() {
