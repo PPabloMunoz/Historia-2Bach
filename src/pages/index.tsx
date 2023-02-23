@@ -1,10 +1,15 @@
 import Link from 'next/link'
+import Head from 'next/head'
+import { BiUpArrowAlt } from 'react-icons/bi'
+
+// Styles
+import buttonStyles from '@/src/styles/button.module.css'
+
+// Components
 import Navbar from '@components/Navbar'
 import ChangeThemeBlock from '@components/ChangeThemeBlock'
 
-import buttonStyles from '@/src/styles/button.module.css'
-
-import { BiUpArrowAlt } from 'react-icons/bi'
+// Functions
 import { useUserContext } from '@utils/UserContext'
 
 export default function Home() {
@@ -16,6 +21,12 @@ export default function Home() {
         theme === 'dark' ? 'dark bg-neutral-800 text-white min-h-screen' : ''
       }
     >
+      <Head>
+        <meta http-equiv='X-UA-Compatible' content='IE=7' />
+        <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+        <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </Head>
       <Navbar home />
       <h1 className='text-3xl lg:text-6xl text-center font-bold mt-6 lg:mb-20'>
         Historia 2º Bach
