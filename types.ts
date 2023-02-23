@@ -15,6 +15,17 @@ export interface NavbarTypes {
   page?: 'vocabulario' | 'cronologia' | 'ejercicios'
 }
 
+export type titleVocabulary =
+  | 'Bloque 1'
+  | 'Bloque 2'
+  | 'Bloque 3'
+  | 'Bloque 4'
+  | 'Bloque 5'
+  | 'Bloque 6'
+  | 'Bloque 7'
+  | 'Bloque 8'
+
+// Types for supabase database
 export type Json =
   | string
   | number
