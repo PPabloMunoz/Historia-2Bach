@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang='es'>
       <Head>
-        <link rel='icon' href='/PM.svg' />ç
+        <link rel='icon' href='/PM.svg' />
         <meta http-equiv='X-UA-Compatible' content='IE=7' />
         <meta http-equiv='X-UA-Compatible' content='ie=edge' />
         <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
