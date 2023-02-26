@@ -47,6 +47,7 @@ export default function CronologiaPage() {
   // Create Aleatory Word Array
   useEffect(() => {
     aleatoryFunction(blockSelected, range, setAleatory)
+    setMySolution([])
   }, [blockSelected, range])
 
   // Sort Aleatory Array
